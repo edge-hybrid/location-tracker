@@ -3,12 +3,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MapScreen from './src/MapScreen.tsx';
 import WorkoutComplete from './src/WorkoutComplete.tsx';
 import { NavigationContainer } from '@react-navigation/native';
+import { TrackingProvider } from './src/context/TrackingContext.tsx';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Router />
-    </NavigationContainer>
+    <TrackingProvider>
+      <NavigationContainer>
+        <Router />
+      </NavigationContainer>
+    </TrackingProvider>
   );
 };
 
